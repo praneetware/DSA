@@ -5,9 +5,11 @@ struct node{
 	int data;
 	struct node *next;
 };
+
 struct node *top = NULL;
 
-int pop(){
+int pop()
+{
 	if(top==NULL)
 	{
 		printf("Stack is empty");
@@ -22,28 +24,29 @@ int pop(){
 	}
 }
 
-void push(int data)
-{
+void push(int data){
 	struct node *temp = (struct node *)malloc(1*sizeof(struct node));
-	if(top==NULL){
+	if(top==NULL)
+	{
 		temp -> next = NULL;
 	}
-	else{
+	else
+	{
 		temp -> next = top;
 	}
-	temp -> data = data;
+	temp->data = data;
 	top = temp;
 }
 
 void printStack()
 {
 	struct node *temp = top;
-	if(temp==NULL)
+	if(temp == NULL)
 	{
-		printf("STACK UNDERFLOW");
-		return;
+		printf("Stack underflow");
 	}
-	while(temp!=NULL){
+	while(temp!=NULL)
+	{
 		printf("%d ", temp -> data);
 		temp = temp -> next;
 	}
